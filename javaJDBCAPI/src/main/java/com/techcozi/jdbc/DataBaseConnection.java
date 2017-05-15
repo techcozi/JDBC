@@ -9,24 +9,22 @@ import java.sql.Statement;
 
 public class DataBaseConnection {
 
-	public static final String MYSQL_DRIVER = "com.mysql.jdbc.Driver";
-	public static final String MYSQL_URL = "jdbc:mysql://localhost/test?"
+	public static final String DB_DRIVER = "com.mysql.jdbc.Driver";
+	public static final String DB_URL = "jdbc:mysql://localhost/test?"
 											+ "user=root&password=";
-	
-	//public static final String MYSQL_URL = "jdbc:mysql://localhost:3306/mkyongcom","root", "password";
+	//public static final String MYSQL_URL = "jdbc:mysql://localhost:3306/test","root", "password";
 	
 	private static Connection connection;
 	private static Statement statement;
 	private ResultSet resultSet;
-	private PreparedStatement preparedStatement;
 	
 	public DataBaseConnection(){
 	}
 	
 	public static Connection getConnection() {
 		try {
-			Class.forName(MYSQL_DRIVER);
-			connection = DriverManager.getConnection(MYSQL_URL);
+			Class.forName(DB_DRIVER);
+			connection = DriverManager.getConnection(DB_URL);
 			
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
