@@ -7,17 +7,14 @@ import java.sql.SQLException;
 
 public class PreparedStatementJDBC {
 
-	public static void main(String[] argv) {
+	public static void main(String[] args) {
+		
 		try {
-
 			displayTheRecords(777);
 
 		} catch (SQLException e) {
-
 			System.out.println(e.getMessage());
-
 		}
-
 	}
 
 	private static void displayTheRecords(int userId) throws SQLException {
